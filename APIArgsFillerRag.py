@@ -18,8 +18,8 @@ def get_train_class_by_query_class(query_class: str) -> str:
     }
     return mapping.get(query_class, WEAVIATE_CLASS_TRAIN)
 
-DEEPSEEK_API_KEY = "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" 
-BGE_MODEL_PATH = r"F:\Arshad\Payanname\BGE-m3 model"
+DEEPSEEK_API_KEY = ...
+BGE_MODEL_PATH = ...
 
 class DeepSeekLLM(LLM, BaseModel):
     api_key: str = Field(..., exclude=True)
@@ -34,12 +34,12 @@ class DeepSeekLLM(LLM, BaseModel):
             "Content-Type": "application/json"
         }
         data = {
-            "model": "deepseek/deepseek-chat-v3-0324",
+            "model": ...,
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.3,
             "max_tokens": 1000
         }
-        response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
+        response = requests.post(..., headers=headers, json=data)
         response.raise_for_status()
         return response.json()["choices"][0]["message"]["content"]
 
@@ -156,8 +156,6 @@ class ParameterizedRAG:
         sem_docs = self.semantic_search(self.client, query, self.embedding_model, self.collection_name, 5)
         examples = bm25_docs + sem_docs
         prompt_main = self.build_prompt(query, examples)
-        print("پرامپت اصلی")
-        print(prompt_main)
         answer_main = self.llm._call(prompt_main)
         self.client.close()
         return answer_main

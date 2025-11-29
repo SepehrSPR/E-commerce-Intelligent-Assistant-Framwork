@@ -3,7 +3,7 @@ import torch
 import os
 
 class FaBERTClassifier:
-    def __init__(self, model_path: str = r"F:\Arshad\Payanname\Classifier1\withBertFamily\FaBert\fabert-sentence-classifier"):
+    def __init__(self, model_path: str = ...):
         self.model = AutoModelForSequenceClassification.from_pretrained(model_path, num_labels=4, use_safetensors=True)
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model.eval()

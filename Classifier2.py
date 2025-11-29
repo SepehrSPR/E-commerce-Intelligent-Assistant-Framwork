@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
 class FaBERTSubClassifier:
-    def __init__(self, model_path: str = r"F:\Arshad\Payanname\Classifier2\BertFamily\MultiLingualBert\bert-multilingual-uncased-classifier"):
+    def __init__(self, model_path: str = ...):
         self.model = AutoModelForSequenceClassification.from_pretrained(model_path, num_labels=3, use_safetensors=True)
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model.eval()
