@@ -75,7 +75,7 @@ persian-query-system/
 ```
 ### Classifier A dataset example
 ```json
-{"کوئری": "رمز عبورم را فراموش کرده‌ام", دسته: پشتیبانی سایت}
+{"کوئری": "رمز عبورم را فراموش کرده‌ام", "دسته": "پشتیبانی سایت"}
 {"کوئری": "گوشی A51 چه ویژگی‌هایی دارد؟", "دسته": "راهنمایی در مورد کالا"}
 {"کوئری": "می‌خواهم بهترین لپ‌تاپ را پیدا کنم", "دسته": "جستجو"}
 {"کوئری": "مقایسه سامسونگ a71 و s23", "دسته": "مقایسه"}
@@ -97,7 +97,13 @@ persian-query-system/
 ### APIArgsFiller datasets example
 ** simple dataset
 ```json
-query:,queryTerms,CategoryFilter,BrandFilter,minPrice,maxPrice,sortOrder,queryClass```
+"query":"مانیتور ال‌جی 27GP850-B با صفحه بزرگ و نرخ تازه‌سازی بالا می‌خوام","queryTerms":"[مانیتور,ال‌جی,27GP850-B,با,صفحه,بزرگ,نرخ,تازه‌سازی,بالا]","CategoryFilter":"category:مانیتور","BrandFilter":"brand:ال‌جی","minPrice":"0","maxPrice":"0","sortOrder":"normal"```
+```
+** Parametric dataset
+```json
+"query":"ساعت هوشمند مدل جدید سامسونگ، در حد نو، بدون خط و خش، قیمت حدود ۶ میلیون تومان.","queryTerms":"[ساعت,هوشمند جدید,سامسونگ,در,حد,نو,بدون,خط,خش]","CategoryFilter":"category:ساعت و بند هوشمند","BrandFilter":"brand:سامسونگ","minPrice":"6000000","maxPrice":"6000000","sortOrder":"normal"
+```
+
 
 
 
