@@ -117,5 +117,9 @@ python main.py
 - **Queries are routed through classifiers**
 - **Appropriate RAG module generates the response**
 - **Exit using exit or خروج**
+# important notes to run the project
+- **1- Extract and install all required libraries like typing and etc first**
+- **2- you should save all datasets as weaviate collections with a embedded query as their vector(except classifiers datasets thats up to you)**
+- **3-  **
 
 
