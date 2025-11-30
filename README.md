@@ -56,7 +56,7 @@ persian-query-system/
 ├── Classifier1.py
 ├── Classifier2.py
 ├── SiteSupportRag.py
-├── Product_InfoDirectAsk.py
+├── ProductTechnicalSupportDirectAsk.py
 ├── ComparisonRag.py
 ├── APIArgsFillerRag.py
 ├── datasets/
@@ -74,10 +74,6 @@ persian-query-system/
 │       ├── simple.jsonl
 │       ├── parametric.jsonl
 │       └── non_parametric.jsonl
-├── models/
-│   ├── FaBERTClassifier/
-│   ├── FaBERTSubClassifier/
-│   └── BGE/
 ```
 ### Classifier A
 ```json
@@ -92,6 +88,24 @@ persian-query-system/
 {"کوئری": "لپ‌تاپ با پردازنده i7 و رم ۱۶ گیگ", "دسته": "پارامتری"}
 {"کوئری": "لپ‌تاپ ارزان و با کیفیت", "دسته": "غیرپارامتری"}
 ```
+### Site Support
+```json
+{"کوئری": "چگونه حساب کاربری خود را فعال کنم؟", "پاسخ": "برای فعال کردن حساب کاربری، روی لینک فعال‌سازی ایمیل کلیک کنید."}
+```
+### Product Guidance
+```json
+{"کوئری": "چگونه حساب کاربری خود را فعال کنم؟", "پاسخ": "برای فعال کردن حساب کاربری، روی لینک فعال‌سازی ایمیل کلیک کنید."}
+```
+### Site Support
+```json
+{"کوئری": "چگونه حساب کاربری خود را فعال کنم؟", "پاسخ": "برای فعال کردن حساب کاربری، روی لینک فعال‌سازی ایمیل کلیک کنید."}
+```
+### Site Support
+```json
+{"کوئری": "چگونه حساب کاربری خود را فعال کنم؟", "پاسخ": "برای فعال کردن حساب کاربری، روی لینک فعال‌سازی ایمیل کلیک کنید."}
+```
+
+
 
 
 
