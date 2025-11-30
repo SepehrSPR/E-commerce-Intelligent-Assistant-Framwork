@@ -29,7 +29,7 @@ A Persian query processing system with multi-level classification and profession
   - Compatible with Persian and English queries
 
 ## Project & Dataset Structure
-'''
+```text
 persian-query-system/
 ├── main.py
 ├── route.py
@@ -40,23 +40,23 @@ persian-query-system/
 ├── ComparisonRag.py
 ├── APIArgsFillerRag.py
 ├── datasets/
-│ ├── classifier_a/
-│ │ └── classifier_a.jsonl
-│ ├── classifier_b/
-│ │ └── classifier_b.jsonl
-│ ├── site_support/
-│ │ └── site_support.jsonl
-│ ├── product_info/
-│ │ └── product_info.jsonl
-│ ├── comparison/
-│ │ └── comparison.jsonl
-│ └── search_queries/
-│ ├── simple.jsonl
-│ ├── parametric.jsonl
-│ └── non_parametric.jsonl
+│   ├── classifier_a/
+│   │   └── classifier_a.jsonl
+│   ├── classifier_b/
+│   │   └── classifier_b.jsonl
+│   ├── site_support/
+│   │   └── site_support.jsonl
+│   ├── product_info/
+│   │   └── product_info.jsonl
+│   ├── comparison/
+│   │   └── comparison.jsonl
+│   └── search_queries/
+│       ├── simple.jsonl
+│       ├── parametric.jsonl
+│       └── non_parametric.jsonl
 ├── models/
-│ ├── FaBERTClassifier/
-│ ├── FaBERTSubClassifier/
-│ └── BGE/
-'''
+│   ├── FaBERTClassifier/
+│   ├── FaBERTSubClassifier/
+│   └── BGE/
+```
 
