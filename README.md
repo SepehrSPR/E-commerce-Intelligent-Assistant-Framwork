@@ -1,6 +1,6 @@
 # Persian Query Handling System
 
-A Persian query processing system with multi-level classification and professional response generation using RAG (Retrieval-Augmented Generation). The system is modular, extendable, and can be adapted for English queries with minor adjustments.
+A Persian query processing system with multi-level classification and professional response generation using RAG (Retrieval-Augmented Generation). The system is modular, extendable, and can be adapted for English queries with enough adjustments.
 
 ## Features
 
@@ -29,4 +29,34 @@ A Persian query processing system with multi-level classification and profession
   - Compatible with Persian and English queries
 
 ## Project & Dataset Structure
+'''
+persian-query-system/
+├── main.py
+├── route.py
+├── Classifier1.py
+├── Classifier2.py
+├── SiteSupportRag.py
+├── Product_InfoDirectAsk.py
+├── ComparisonRag.py
+├── APIArgsFillerRag.py
+├── datasets/
+│ ├── classifier_a/
+│ │ └── classifier_a.jsonl
+│ ├── classifier_b/
+│ │ └── classifier_b.jsonl
+│ ├── site_support/
+│ │ └── site_support.jsonl
+│ ├── product_info/
+│ │ └── product_info.jsonl
+│ ├── comparison/
+│ │ └── comparison.jsonl
+│ └── search_queries/
+│ ├── simple.jsonl
+│ ├── parametric.jsonl
+│ └── non_parametric.jsonl
+├── models/
+│ ├── FaBERTClassifier/
+│ ├── FaBERTSubClassifier/
+│ └── BGE/
+'''
 
