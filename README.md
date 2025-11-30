@@ -1,6 +1,7 @@
-# Persian Query Handling System
-
-A Persian query processing system with multi-level classification and professional response generation using RAG (Retrieval-Augmented Generation). The system is modular, extendable, and can be adapted for English queries with enough adjustments.
+# E-commerce Intelligent Assistant Framework
+A modular and extensible **E-commerce Intelligent Assistant Framework** designed for advanced Persian query processing.  
+This system uses multi-level intent classification (FaBERT-based) combined with **RAG (Retrieval-Augmented Generation)** pipelines to deliver accurate, context-aware, and domain-specific responses.  
+All components—including classifiers, datasets, embedders, APIs, prompts, and RAG modules—are fully customizable, and the framework can be adapted for English queries with enough adjustments.
 
 ## Features
 
@@ -21,13 +22,32 @@ A Persian query processing system with multi-level classification and profession
   - `ComparisonRAG`: Extracts two items for comparison queries
   - `ParameterizedRAG`: Extracts structured arguments for search queries using BM25, semantic search, and embeddings
 
-- **Extensibility & Flexibility**
-  - Classifiers can be replaced with other Persian or multilingual models
-  - RAG LLMs can use alternative APIs (DeepSeek, OpenAI, Cohere, etc.)
-  - Prompts are fully customizable to modify response behavior, tone, or output format
-  - Dataset classes and fields can be added, removed, or modified, but corresponding adjustments must be applied in code modules and prompt-building logic
-  - Compatible with Persian and English queries
+### **Extensibility & Flexibility**
 
+- **Classifiers are interchangeable**  
+  You can replace FaBERT-based classifiers with any other Persian or multilingual models (e.g., mBERT, XLM-R, GPT-based API classifiers, etc.).
+
+- **RAG LLM backends are swappable**  
+  You can use different LLM APIs such as DeepSeek, OpenAI, Cohere, or any custom local model.  
+  Only the LLM wrapper class needs to be updated.
+
+- **Prompts are fully customizable**  
+  You can change reasoning style, tone, safety rules, extraction logic, and output format in each RAG module as needed.
+
+- **Dataset schemas are flexible**  
+  Dataset classes and fields can be added, removed, or renamed.  
+  Whenever schema changes, make sure to update:  
+  - The related model training scripts  
+  - The routing logic in `route.py`  
+  - Prompt construction in each RAG module  
+  - Weaviate schema (if applicable)
+
+- **Embedding model can be replaced easily**  
+  The system currently uses a local **BGE embedding model**, but you can swap it with:  
+  SentenceTransformers models, OpenAI embeddings, Cohere embeddings, or any HuggingFace embedding model.
+
+- **Supports multilingual and English adaptation**  
+  With proper dataset adjustments and prompt tuning, the entire system can be switched to English or become fully bilingual **without modifying the core architecture**.
 ## Project & Dataset Structure
 ```text
 persian-query-system/
@@ -59,4 +79,17 @@ persian-query-system/
 │   ├── FaBERTSubClassifier/
 │   └── BGE/
 ```
+### Classifier A
+```json
+{"query": "رمز عبورم را فراموش کرده‌ام", "label": "پشتیبانی سایت"}
+{"query": "گوشی A51 چه ویژگی‌هایی دارد؟", "label": "راهنمایی در مورد کالا"}
+{"query": "می‌خواهم بهترین لپ‌تاپ را پیدا کنم", "label": "جستجو"}
+{"query": "مقایسه سامسونگ a71 و s23", "label": "مقایسه"}
+### Classifier B
+```json
+{"query": "خرید گوشی َ redmi note 14s", "label": "ساده"}
+{"query": "لپ‌تاپ با پردازنده i7 و رم ۱۶ گیگ", "label": "پارامتری"}
+{"query": "لپ‌تاپ ارزان و با کیفیت", "label": "غیرپارامتری"}
+
+
 
