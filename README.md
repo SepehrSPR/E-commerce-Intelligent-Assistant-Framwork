@@ -32,7 +32,7 @@ All components—including classifiers, datasets, embedders, APIs, prompts, and 
   Only the LLM wrapper class needs to be updated.
 
 - **Prompts are fully customizable**  
-  You can change reasoning style, tone, safety rules, extraction logic, and output format in each RAG module as needed.
+  You can change reasoning style, extraction logic, and output format in each RAG module as needed.
 
 - **Dataset schemas are flexible**  
   Dataset classes and fields can be added, removed, or renamed.  
@@ -40,7 +40,7 @@ All components—including classifiers, datasets, embedders, APIs, prompts, and 
   - The related model training scripts  
   - The routing logic in `route.py`  
   - Prompt construction in each RAG module  
-  - Weaviate schema (if applicable)
+  - Weaviate schema
 
 - **Embedding model can be replaced easily**  
   The system currently uses a local **BGE embedding model**, but you can swap it with:  
@@ -66,44 +66,38 @@ persian-query-system/
 │   │   └── classifier_b.jsonl
 │   ├── site_support/
 │   │   └── site_support.jsonl
-│   ├── product_info/
-│   │   └── product_info.jsonl
 │   ├── comparison/
 │   │   └── comparison.jsonl
-│   └── search_queries/
+│   └── APIArgsFiller/
 │       ├── simple.jsonl
 │       ├── parametric.jsonl
 │       └── non_parametric.jsonl
 ```
-### Classifier A
+### Classifier A dataset example
 ```json
-{"کوئری": "رمز عبورم را فراموش کرده‌ام", "دسته": "پشتیبانی سایت"}
+{"کوئری": "رمز عبورم را فراموش کرده‌ام", دسته: پشتیبانی سایت}
 {"کوئری": "گوشی A51 چه ویژگی‌هایی دارد؟", "دسته": "راهنمایی در مورد کالا"}
 {"کوئری": "می‌خواهم بهترین لپ‌تاپ را پیدا کنم", "دسته": "جستجو"}
 {"کوئری": "مقایسه سامسونگ a71 و s23", "دسته": "مقایسه"}
 ```
-### Classifier B
+### Classifier B dataset example
 ```json
 {"کوئری": "خرید گوشی َ redmi note 14s", "دسته": "ساده"}
 {"کوئری": "لپ‌تاپ با پردازنده i7 و رم ۱۶ گیگ", "دسته": "پارامتری"}
 {"کوئری": "لپ‌تاپ ارزان و با کیفیت", "دسته": "غیرپارامتری"}
 ```
-### Site Support
+### Site Support dataset example
 ```json
 {"کوئری": "چگونه حساب کاربری خود را فعال کنم؟", "پاسخ": "برای فعال کردن حساب کاربری، روی لینک فعال‌سازی ایمیل کلیک کنید."}
 ```
-### Product Guidance
+### Comparison dataset example
 ```json
-{"کوئری": "چگونه حساب کاربری خود را فعال کنم؟", "پاسخ": "برای فعال کردن حساب کاربری، روی لینک فعال‌سازی ایمیل کلیک کنید."}
+{"query": "مقایسه گوشی سامسونگ a71 و s23", "item1": "سامسونگ a71", "item2": "سامسونگ s23"}
 ```
-### Site Support
+### APIArgsFiller datasets example
+** simple dataset
 ```json
-{"کوئری": "چگونه حساب کاربری خود را فعال کنم؟", "پاسخ": "برای فعال کردن حساب کاربری، روی لینک فعال‌سازی ایمیل کلیک کنید."}
-```
-### Site Support
-```json
-{"کوئری": "چگونه حساب کاربری خود را فعال کنم؟", "پاسخ": "برای فعال کردن حساب کاربری، روی لینک فعال‌سازی ایمیل کلیک کنید."}
-```
+query:,queryTerms,CategoryFilter,BrandFilter,minPrice,maxPrice,sortOrder,queryClass```
 
 
 
