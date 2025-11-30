@@ -95,11 +95,11 @@ persian-query-system/
 {"query": "مقایسه گوشی سامسونگ a71 و s23", "item1": "سامسونگ a71", "item2": "سامسونگ s23"}
 ```
 ### APIArgsFiller datasets example
-** simple dataset
+**simple dataset
 ```json
 "query":"مانیتور ال‌جی 27GP850-B با صفحه بزرگ و نرخ تازه‌سازی بالا می‌خوام","queryTerms":"[مانیتور,ال‌جی,27GP850-B,با,صفحه,بزرگ,نرخ,تازه‌سازی,بالا]","CategoryFilter":"category:مانیتور","BrandFilter":"brand:ال‌جی","minPrice":"0","maxPrice":"0","sortOrder":"normal"```
 ```
-** Parametric dataset
+**Parametric dataset
 ```json
 "query":"ساعت هوشمند مدل جدید سامسونگ، در حد نو، بدون خط و خش، قیمت حدود ۶ میلیون تومان.","queryTerms":"[ساعت,هوشمند جدید,سامسونگ,در,حد,نو,بدون,خط,خش]","CategoryFilter":"category:ساعت و بند هوشمند","BrandFilter":"brand:سامسونگ","minPrice":"6000000","maxPrice":"6000000","sortOrder":"normal"
 ```
