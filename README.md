@@ -114,8 +114,8 @@ Train classifier models on related and structered dataset like examplees or some
 ```
 python main.py
 ```
--**Queries are routed through classifiers**
--**Appropriate RAG module generates the response**
--**Exit using exit or خروج**
+- **Queries are routed through classifiers**
+- **Appropriate RAG module generates the response**
+- **Exit using exit or خروج**
 
 
