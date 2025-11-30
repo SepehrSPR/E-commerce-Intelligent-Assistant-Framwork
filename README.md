@@ -107,19 +107,15 @@ persian-query-system/
 ```json
 "query":".پربازدیدترین قاب تبلت سامسونگ","queryTerms":"[قاب,تبلت,سامسونگ]","CategoryFilter":"category:قاب و کیف تبلت","BrandFilter":"brand:سامسونگ","minPrice":"0","maxPrice":"0","sortOrder":"view-desc"
 ```
-```
 Dataset classes and fields can be expanded or modified; corresponding changes must also be applied in the code modules and prompt-building functions. English queries are also supported with enough adjustments.
-```
 ### Model Training
 Train classifier models on related and structered dataset like examplees or something else then save them and adjust paths to it accordingly.
 ### Running the System
 ```
 python main.py
 ```
-Queries are routed through classifiers
-
-Appropriate RAG module generates the response
-
-Exit using exit or خروج
+-**Queries are routed through classifiers**
+-**Appropriate RAG module generates the response**
+-**Exit using exit or خروج**
 
 
