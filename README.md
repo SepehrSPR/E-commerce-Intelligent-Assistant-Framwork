@@ -95,17 +95,31 @@ persian-query-system/
 {"query": "مقایسه گوشی سامسونگ a71 و s23", "item1": "سامسونگ a71", "item2": "سامسونگ s23"}
 ```
 ### APIArgsFiller datasets example
-**simple dataset
+**simple dataset**
 ```json
 "query":"مانیتور ال‌جی 27GP850-B با صفحه بزرگ و نرخ تازه‌سازی بالا می‌خوام","queryTerms":"[مانیتور,ال‌جی,27GP850-B,با,صفحه,بزرگ,نرخ,تازه‌سازی,بالا]","CategoryFilter":"category:مانیتور","BrandFilter":"brand:ال‌جی","minPrice":"0","maxPrice":"0","sortOrder":"normal"```
 ```
-**Parametric dataset
+**Parametric dataset**
 ```json
-"query":"ساعت هوشمند مدل جدید سامسونگ، در حد نو، بدون خط و خش، قیمت حدود ۶ میلیون تومان.","queryTerms":"[ساعت,هوشمند جدید,سامسونگ,در,حد,نو,بدون,خط,خش]","CategoryFilter":"category:ساعت و بند هوشمند","BrandFilter":"brand:سامسونگ","minPrice":"6000000","maxPrice":"6000000","sortOrder":"normal"
+"query":".ساعت هوشمند مدل جدید سامسونگ، در حد نو، بدون خط و خش، قیمت حدود ۶ میلیون تومان","queryTerms":"[ساعت,هوشمند جدید,سامسونگ,در,حد,نو,بدون,خط,خش]","CategoryFilter":"category:ساعت و بند هوشمند","BrandFilter":"brand:سامسونگ","minPrice":"6000000","maxPrice":"6000000","sortOrder":"normal"
 ```
+**Non-parametric**
+```json
+"query":".پربازدیدترین قاب تبلت سامسونگ","queryTerms":"[قاب,تبلت,سامسونگ]","CategoryFilter":"category:قاب و کیف تبلت","BrandFilter":"brand:سامسونگ","minPrice":"0","maxPrice":"0","sortOrder":"view-desc"
+```
+```
+Dataset classes and fields can be expanded or modified; corresponding changes must also be applied in the code modules and prompt-building functions. English queries are also supported with enough adjustments.
+```
+### Model Training
+Train classifier models on related and structered dataset like examplees or something else then save them and adjust paths to it accordingly.
+### Running the System
+```
+python main.py
+```
+Queries are routed through classifiers
 
+Appropriate RAG module generates the response
 
-
-
+Exit using exit or خروج
 
 
